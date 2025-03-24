@@ -12,7 +12,7 @@ export Op_name="OpenWrt-NITT"               # 修改主机名称为OpenWrt(填0�
 
 # 内核和系统分区大小(不是每个机型都可用)
 export Kernel_partition_size="64"           # 内核分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般16,数值以MB计算，填0为不作修改),如果你不懂就填0
-export Rootfs_partition_size="4096"         # 系统分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般300左右,数值以MB计算，填0为不作修改),如果你不懂就填0
+export Rootfs_partition_size="1024"         # 系统分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般300左右,数值以MB计算，填0为不作修改),如果你不懂就填0
 
 # 默认主题设置
 export Mandatory_theme="argon"              # 将bootstrap替换您需要的主题为必选主题(可自行更改您要的,源码要带此主题就行,填写名称也要写对) (填写主题名称,填0为不作修改)
@@ -70,15 +70,7 @@ export Cancel_running="0"                    # 取消路由器每天跑分任务
 #git clone https://github.com/sirpdboy/luci-theme-kucat.git package/luci-app-kucat   # kucat主题
 git clone https://github.com/lq-wq/luci-app-quickstart.git package/luci-app-quickstart   # iStoreOS-web
 git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky      # luci-app-lucky 端口转发
-#git clone https://github.com/morytyann/OpenWrt-mihomo.git package/luci-app-mihomo   #科学上网
-
-# 晶晨CPU系列打包固件设置(不懂请看说明)
-export amlogic_model="s905d"
-export amlogic_kernel="5.10.01_6.1.01"
-export auto_kernel="true"
-export rootfs_size="2560"
-export kernel_usage="stable"
-
+git clone -b main https://github.com/nikkinikki-org/OpenWrt-nikki.git package/OpenWrt-nikki
 
 # 修改插件名字
 sed -i 's/"终端"/"TTYD"/g' `egrep "终端" -rl ./`
